@@ -2,6 +2,4 @@
 
 # Script to remove "again" commits from a certain way back
 
-BACKFROM=${1-1}
-
-EDITOR='gsed --in-place -e "/$BACKFROM/,\$s/pick \\([0-9a-f]*\\) again-/fixup \\1 again-/"' git rebase -i $(git rev-list --max-parents=0 HEAD)
+EDITOR='gsed --in-place -e "/${1-1}/,\$s/pick \\([0-9a-f]*\\) again-/fixup \\1 again-/"' git rebase -i $(git rev-list --max-parents=0 HEAD)
