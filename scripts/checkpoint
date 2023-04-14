@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Turn an "again" commit into a regular one, which the neveragain command won't remove
+
+git commit --amend -m "$*"
